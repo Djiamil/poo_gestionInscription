@@ -21,10 +21,10 @@ class User extends Personne
  
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $login;
+    protected $login;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $password;
+    protected $password;
 
 
     public function getLogin(): ?string

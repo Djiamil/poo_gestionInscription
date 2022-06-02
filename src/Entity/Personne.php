@@ -16,13 +16,13 @@ class Personne
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private $id;
+    protected $id;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $nonComplet;
+    protected $nonComplet;
 
     #[ORM\Column(type: 'smallint')]
-    private $etat;
+    protected $etat;
 
  
 
