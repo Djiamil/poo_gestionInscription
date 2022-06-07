@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajout de de demande {% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.motif, {"attr":{'placeholder':'Reseigner la motif','label':'demande' ,'class':'form-control'}}) }}
+    {{ form_row(form.date,{"attr":{'class':'form-control'}}) }}
+    <button>Ajouter</button>
+    {{ form_end(form) }}
+{% endblock %}
