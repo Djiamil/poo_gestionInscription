@@ -16,8 +16,8 @@ class Inscription
     #[ORM\Column(type: 'date')]
     private $date;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $etat;
+    #[ORM\Column(type: 'string', length: 50,options:["default"=>'1'])]
+    private $etat=1;
 
     #[ORM\ManyToOne(targetEntity: Classe::class, inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
@@ -31,7 +31,7 @@ class Inscription
     #[ORM\JoinColumn(nullable: false)]
     private $anneeScolaire;
 
-    #[ORM\ManyToOne(targetEntity: Etudiant::class, inversedBy: 'inscriptions')]
+    #[ORM\ManyToOne(targetEntity: Etudiant::class, inversedBy: 'inscriptions',cascade: ['persist'])]
     #[ORM\JoinColumn(nullable: false)]
     private $etudiant;
 
@@ -57,12 +57,12 @@ class Inscription
         return $this->etat;
     }
 
-    public function setEtat(string $etat): self
-    {
-        $this->etat = $etat;
+    // public function setEtat(string $etat): self
+    // {
+    //     $this->etat = $etat;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getClasse(): ?Classe
     {

@@ -34,8 +34,8 @@ class Classe
     #[ORM\ManyToMany(targetEntity: Professeur::class, mappedBy: 'classes')]
     private $professeurs;
 
-    #[ORM\Column(type: 'smallint')]
-    private $etat;
+    #[ORM\Column(type: 'smallint',options:["default"=>'1'])]
+    private $etat=1;
 
     public function __construct()
     {
@@ -158,10 +158,10 @@ class Classe
         return $this->etat;
     }
 
-    public function setEtat(int $etat): self
-    {
-        $this->etat = $etat;
+    // public function setEtat(int $etat): self
+    // {
+    //     $this->etat = $etat;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

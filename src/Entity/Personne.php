@@ -21,8 +21,8 @@ class Personne
     #[ORM\Column(type: 'string', length: 50)]
     protected $nonComplet;
 
-    #[ORM\Column(type: 'smallint')]
-    protected $etat;
+    #[ORM\Column(type: 'smallint',options:["default"=>'1'] )]
+    protected $etat=1;
 
  
 
@@ -48,10 +48,10 @@ class Personne
         return $this->etat;
     }
 
-    public function setEtat(int $etat): self
-    {
-        $this->etat = $etat;
+    // public function setEtat(int $etat): self
+    // {
+    //     $this->etat = $etat;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

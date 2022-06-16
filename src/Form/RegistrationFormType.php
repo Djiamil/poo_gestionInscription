@@ -36,7 +36,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('etat')
+            // ->add('etat')
         ;
     }
 

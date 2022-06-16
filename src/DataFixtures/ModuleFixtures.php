@@ -12,7 +12,7 @@ class ModuleFixtures extends Fixture
     {
         for ($i=1; $i < 50; $i++) { 
             $mod = new Module();
-            $mod->setEtat(1);
+            // $mod->setEtat(1);
             $mod->setLibelle("mathématique");
             $manager->persist($mod);
         }

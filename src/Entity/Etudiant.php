@@ -31,6 +31,9 @@ class Etudiant extends User
     {
         $this->demandes = new ArrayCollection();
         $this->inscriptions = new ArrayCollection();
+        $mat = 'Etu'.date("Y-m-d");
+        $this->setMatricule($mat);
+        $this->setRoles(['ROLE_ETUDIANT']);
     }
 
 

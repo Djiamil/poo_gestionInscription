@@ -1,0 +1,17 @@
+<h1>Page d'ajout des Classes</h1>
+
+{{ form_start(form) }}
+
+<label for="rp">Les RP</label>
+<select type="rp" id="class" name="lesrp">
+
+{% for rp in rps %}
+<option value="{{ rp.id }}">{{ rp.noncomplet}}</option>
+{% endfor %}
+</select>
+
+
+
+
+
+{{ form_end(form) }}

@@ -22,8 +22,11 @@ class User extends Personne implements UserInterface, PasswordAuthenticatedUserI
     #[ORM\Column(type: 'string', length: 50, unique:true)]
     protected $login;
 
-    #[ORM\Column(type: 'string', length: 50)]
+    #[ORM\Column(type: 'string', length: 180)]
     protected $password;
+
+    #[ORM\Column(type: 'json')]
+    private $roles = [];
 
 
     public function getLogin(): ?string
@@ -71,5 +74,12 @@ class User extends Personne implements UserInterface, PasswordAuthenticatedUserI
     public function getUsername()
     {
         return $this->login;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 }

@@ -21,7 +21,7 @@ class AnneeScolaire
     #[ORM\OneToMany(mappedBy: 'anneeScolaire', targetEntity: Inscription::class)]
     private $inscriptions;
 
-    #[ORM\Column(type: 'smallint')]
+    #[ORM\Column(type: 'smallint',options:["default"=>'1'])]
     private $etat;
 
     public function __construct()
@@ -81,10 +81,10 @@ class AnneeScolaire
         return $this->etat;
     }
 
-    public function setEtat(int $etat): self
-    {
-        $this->etat = $etat;
+    // public function setEtat(int $etat): self
+    // {
+    //     $this->etat = $etat;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

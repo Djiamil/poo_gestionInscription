@@ -17,14 +17,14 @@ class DemandeFixtures extends Fixture
         $rp ->setNonComplet("Mbaye lo");
         $rp -> setLogin("Mbayelo@gmail.com");
         $rp -> setPassword("DER");
-        $rp ->setEtat(1);
+        // $rp ->setEtat(1);
         $manager->persist($rp);
 
         $etud = new Etudiant;
         $etud ->setNonComplet("Mouhamede Mbodji");
         $etud -> setLogin("mbodjimouhamede@gmail.com");
         $etud ->setPassword("DER");
-        $etud -> setEtat(1);
+        // $etud -> setEtat(1);
         $etud -> setMatricule(1);
         $etud -> setSexe("M");
         $etud -> setAdresse("Gediawaye");
@@ -36,7 +36,7 @@ class DemandeFixtures extends Fixture
             $demad = new Demande(); 
             $demad->setMotif($i%2==0 ? "Anuller" : "Confirmer");
             $demad->setdate($fakere->dateTimeBetween('Y-m-d'));
-            $demad->setEtat(1);
+            // $demad->setEtat(1);
             $demad->setRp($rp);
             $demad->setEtudiant($etud);
             $manager->persist($demad);
